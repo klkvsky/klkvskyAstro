@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+
+const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
+	(a, b) =>
+		new Date(b.frontmatter.pubDate).valueOf() -
+		new Date(a.frontmatter.pubDate).valueOf()
+);
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<!-- <ul role="list" class="link-card-grid">
+			<Card
+				href="https://astro.build/chat/"
+				title="Chat"
+				body="Come say hi to our amazing Discord community. ❤️"
+			/>
+		</ul> -->
+		<ul class="my-5 grid grid-cols-1 gap-5">
+			{posts.map((post) => <Card post={post} />)}
+		</ul>
+	</main>
+</Layout>

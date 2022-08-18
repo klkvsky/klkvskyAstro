@@ -1,0 +1,71 @@
+---
+export interface Props {
+	post: Array;
+}
+
+const { post } = Astro.props as Props;
+---
+
+<li class="gap-4 w-full rounded-xl flex flex-col items-start justify-center">
+	<!-- <div
+		class="bg-white/5 w-full rounded-xl flex flex-row flex-wrap items-center justify-between p-4"
+	>
+		<a href={post.url} class="font-bold text-xl w-3/5">
+			{post.frontmatter.title}
+		</a>
+
+		<time datetime={post.frontmatter.pubDate} class="text-sm w-2/5 text-right">
+			{
+				new Date(post.frontmatter.pubDate).toLocaleDateString("ru-RU", {
+					year: "numeric",
+					month: "short",
+					day: "numeric",
+				})
+			}
+		</time>
+	</div> -->
+	<div
+		class="mx-auto bg-white/5 text-white p-6 rounded-3xl w-full h-96 flex flex-col items-start justify-between shadow-lg"
+	>
+		<div class="flex flex-col items-start w-full justify-between gap-2">
+			{post.frontmatter.song && (
+			<div
+				class="text-base font-medium flex flex-row items-center w-full justify-start gap-2 opacity-50"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					class="fill-white w-4 h-4 animate-pulse"
+					><path
+						d="M17.68 5.47H22V8h-4.32zm0 3.51H22v2.53h-4.32zm0 3.51H22v2.53h-4.32zM2 16h4.32v2.53H2zm5.22 0h4.32v2.53H7.22zm5.23 0h4.32v2.53h-4.32zm5.23 0H22v2.53h-4.32zm-5.23-3.51h4.32v2.53h-4.32zm-5.23 0h4.32v2.53H7.22zm0-3.51h4.32v2.53H7.22z"
+					></path>
+				</svg>
+				<span>Разрыв танцпола:</span>
+			</div>
+			<p class="font-bold text-lg">
+				{post.frontmatter.song}
+			</p>
+			)}
+		</div>
+		
+		<div class="flex flex-col items-start w-full justify-between gap-2">
+			<h1 class="font-semibold text-left text-base uppercase">
+				<a href={post.url} class="font-bold text-2xl w-3/5">
+					{post.frontmatter.title}
+				</a>
+			</h1>
+			<time
+				datetime={post.frontmatter.pubDate}
+				class="text-base font-medium uppercase opacity-50"
+			>
+				{
+					new Date(post.frontmatter.pubDate).toLocaleDateString("ru-RU", {
+						year: "numeric",
+						month: "short",
+						day: "numeric",
+					})
+				}
+			</time>
+		</div>
+	</div>
+</li>
