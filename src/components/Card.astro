@@ -6,26 +6,9 @@ export interface Props {
 const { post } = Astro.props as Props;
 ---
 
-<li class="gap-4 w-full rounded-xl flex flex-col items-start justify-center">
-	<!-- <div
-		class="bg-white/5 w-full rounded-xl flex flex-row flex-wrap items-center justify-between p-4"
-	>
-		<a href={post.url} class="font-bold text-xl w-3/5">
-			{post.frontmatter.title}
-		</a>
-
-		<time datetime={post.frontmatter.pubDate} class="text-sm w-2/5 text-right">
-			{
-				new Date(post.frontmatter.pubDate).toLocaleDateString("ru-RU", {
-					year: "numeric",
-					month: "short",
-					day: "numeric",
-				})
-			}
-		</time>
-	</div> -->
+<li class="lg:first:col-span-2 group">
 	<div
-		class="mx-auto bg-white/5 text-white p-6 rounded-3xl w-full h-96 flex flex-col items-start justify-between shadow-lg"
+		class="mx-auto dark:bg-white/5 bg-white dark:text-white p-6 rounded-3xl w-full h-96 flex flex-col items-start justify-between shadow-lg"
 	>
 		<div class="flex flex-col items-start w-full justify-between gap-2">
 			{post.frontmatter.song && (
@@ -35,28 +18,43 @@ const { post } = Astro.props as Props;
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 24 24"
-					class="fill-white w-4 h-4 animate-pulse"
+					class="dark:fill-white fill-black w-4 h-4 animate-pulse"
 					><path
 						d="M17.68 5.47H22V8h-4.32zm0 3.51H22v2.53h-4.32zm0 3.51H22v2.53h-4.32zM2 16h4.32v2.53H2zm5.22 0h4.32v2.53H7.22zm5.23 0h4.32v2.53h-4.32zm5.23 0H22v2.53h-4.32zm-5.23-3.51h4.32v2.53h-4.32zm-5.23 0h4.32v2.53H7.22zm0-3.51h4.32v2.53H7.22z"
 					></path>
 				</svg>
 				<span>Разрыв танцпола:</span>
 			</div>
-			<p class="font-bold text-lg">
+			<p class="font-bold text-lg opacity-50">
 				{post.frontmatter.song}
 			</p>
+			)}
+			{!post.frontmatter.song && (
+			<div
+				class="text-base font-medium flex flex-row items-center w-full justify-start gap-2 opacity-50"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					class="dark:fill-white fill-black w-4 h-4 animate-pulse"
+					><path
+						d="M17.68 5.47H22V8h-4.32zm0 3.51H22v2.53h-4.32zm0 3.51H22v2.53h-4.32zM2 16h4.32v2.53H2zm5.22 0h4.32v2.53H7.22zm5.23 0h4.32v2.53h-4.32zm5.23 0H22v2.53h-4.32zm-5.23-3.51h4.32v2.53h-4.32zm-5.23 0h4.32v2.53H7.22zm0-3.51h4.32v2.53H7.22z"
+					></path>
+				</svg>
+				<span> Танцпол не разорвался :( </span>
+			</div>
 			)}
 		</div>
 		
 		<div class="flex flex-col items-start w-full justify-between gap-2">
 			<h1 class="font-semibold text-left text-base uppercase">
-				<a href={post.url} class="font-bold text-2xl w-3/5">
+				<a href={post.url} class="font-bold text-2xl w-3/5 lg:group-first:text-6xl lg:group-first:font-extrabold">
 					{post.frontmatter.title}
 				</a>
 			</h1>
 			<div class="flex flex-row items-center w-full justify-start gap-1 opacity-50">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-				class="fill-white w-4 h-4"><path d="M21 20V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2zM9 18H7v-2h2v2zm0-4H7v-2h2v2zm4 4h-2v-2h2v2zm0-4h-2v-2h2v2zm4 4h-2v-2h2v2zm0-4h-2v-2h2v2zm2-5H5V7h14v2z"></path></svg>
+				class="dark:fill-white fill-black w-4 h-4"><path d="M21 20V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2zM9 18H7v-2h2v2zm0-4H7v-2h2v2zm4 4h-2v-2h2v2zm0-4h-2v-2h2v2zm4 4h-2v-2h2v2zm0-4h-2v-2h2v2zm2-5H5V7h14v2z"></path></svg>
 			
 			<time
 				datetime={post.frontmatter.pubDate}

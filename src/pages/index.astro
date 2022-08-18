@@ -9,16 +9,9 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
 );
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Персональный блог Куликовского">
 	<main>
-		<!-- <ul role="list" class="link-card-grid">
-			<Card
-				href="https://astro.build/chat/"
-				title="Chat"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul> -->
-		<ul class="my-5 grid grid-cols-1 gap-5">
+		<ul class="my-5 grid grid-cols-1 lg:grid-cols-2 gap-5">
 			{posts.map((post) => <Card post={post} />)}
 		</ul>
 	</main>
