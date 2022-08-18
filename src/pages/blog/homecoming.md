@@ -1,5 +1,5 @@
 ---
-# layout: "../../layouts/BlogPost.astro"
+layout: "../../layouts/BlogLayout.astro"
 title: "Homecoming"
 
 pubDate: "Jul 12 2022"

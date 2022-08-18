@@ -1,5 +1,5 @@
 ---
-# layout: "../../layouts/BlogPost.astro"
+layout: "../../layouts/BlogLayout.astro"
 title: "Litte Dark Age"
 pubDate: "Jul 15 2022"
 iframe: "https://embed.music.apple.com/ru/album/little-dark-age/1334814526?i=1334814531&l=en"

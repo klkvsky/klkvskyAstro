@@ -1,0 +1,87 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Promo from "../components/Promo.astro";
+import Navbar from "../components/Navbar.astro";
+
+export interface Props {
+  content: {
+    title: string;
+    pubDate?: string;
+    iframe?: string;
+    type?: string;
+    isNew?: boolean;
+    personal?: boolean;
+    song?: string;
+    warning?: string;
+  };
+}
+
+const {
+  content: { title, pubDate, iframe, type, isNew, personal, song, warning },
+} = Astro.props as Props;
+---
+
+<html>
+  <head>
+    <BaseHead title={title} description={title} />
+  </head>
+
+  <body class="bg-neutral-900 text-white px-4">
+    <Navbar />
+    <main class="mt-5 mb-10">
+      <article class="leading-relaxed">
+        <div class="flex flex-col gap-2">
+          {
+            pubDate && (
+              <time datetime={pubDate} class="font-medium uppercase opacity-50">
+                {new Date(pubDate).toLocaleDateString("ru-RU", {
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                })}
+              </time>
+            )
+          }
+          <h1 class="font-bold text-6xl mr-10">{title}</h1>
+        </div>
+        {
+          warning && (
+            <div class="bg-[#7f67f6] w-full rounded-xl p-4 mt-5 text-lg underline decoration-white font-semibold text-white decoration-wavy">
+              {warning}
+            </div>
+          )
+        }
+        <div
+          class="my-5 prose lg:prose-xl dark:prose-invert prose-zinc prose-strong:underline prose-strong:decoration-[#7f67f6] prose-strong:font-semibold prose-strong:text-[#7f67f6] prose-strong:decoration-wavy"
+        >
+          <slot />
+        </div>
+
+        <iframe
+          loading="lazy"
+          allow="autoplay *; encrypted-media *;"
+          frameborder="0"
+          height="150"
+          class="no-scrollbar overflow-hidden"
+          style="width:100%;max-width:660px;overflow:hidden;background:transparent;"
+          sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+          src={iframe}></iframe>
+      </article>
+      <a
+        href="/"
+        class="w-full py-5 bg-white/5 font-bold text-sm text-white rounded-lg mt-10 flex flex-row items-center justify-center gap-2"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          class="w-5 h-5 fill-white"
+          ><path
+            d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"
+          ></path>
+        </svg>
+        Вернуться назад
+      </a>
+    </main>
+    <Promo />
+  </body>
+</html>

@@ -1,5 +1,5 @@
 ---
-# layout: "../../layouts/BlogPost.astro"
+layout: "../../layouts/BlogLayout.astro"
 title: "Давление"
 pubDate: "Jul 13 2022"
 iframe: "https://embed.music.apple.com/ru/playlist/music-from-wecrashed/pl.0deb52c947f84084970a7b17a879db2b?l=en"

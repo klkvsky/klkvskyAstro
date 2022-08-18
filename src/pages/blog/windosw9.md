@@ -1,5 +1,5 @@
 ---
-# layout: "../../layouts/BlogPost.astro"
+layout: "../../layouts/BlogLayout.astro"
 title: "Windows 9"
 pubDate: "Jul 14 2022"
 ---

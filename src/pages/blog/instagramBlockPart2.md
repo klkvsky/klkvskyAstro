@@ -1,5 +1,5 @@
 ---
-# layout: "../../layouts/BlogPost.astro"
+layout: "../../layouts/BlogLayout.astro"
 title: "День блокировки инстаграма 2"
 
 pubDate: "Jul 10 2022"
