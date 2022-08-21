@@ -2,7 +2,7 @@
 layout: "../../layouts/BlogLayout.astro"
 title: "Давление"
 pubDate: "Jul 13 2022"
-iframe: "https://embed.music.apple.com/ru/playlist/music-from-wecrashed/pl.0deb52c947f84084970a7b17a879db2b?l=en"
+iframe: ""
 type: "apple"
 song: "WeCrashed Soundtrack"
 ---
@@ -19,4 +19,14 @@ song: "WeCrashed Soundtrack"
 Очень амбициозный человек очень хочет стать очень богатым. 13 лет спустя его компания стоит 2 миллирда долларов, но у него всё очень плохо.  
 Компания кстати называется **WeWork**
 
-Сегодня в **"Разрыве танцпола"** плейлист со всем саундтреком из [WeCrashed](https://tv.apple.com/ru/show/wecrashed/umc.cmc.6qw605uv2rwbzutk2p2fsgvq9) , потому что этот дух 00-10х годов просто невероятен и точно стоит его заного прочувствовать. Не было лучше времени для ностальгии, надеюсь и не будет.
+Сегодня в **"Разрыве танцпола"** плейлист со всем саундтреком из [WeCrashed](https://tv.apple.com/ru/show/wecrashed/umc.cmc.6qw605uv2rwbzutk2p2fsgvq9) ,потому что этот дух 00-10х годов просто невероятен и точно стоит его заного прочувствовать. Не было лучше времени для ностальгии, надеюсь и не будет.
+
+ <iframe loading="lazy" allow="autoplay *; encrypted-media *; fullscreen *" class="post__razriv" frameborder="0"
+          height="450" style="
+            width: 100%;
+            max-width: 660px;
+            overflow: hidden;
+            background: transparent;
+          "
+          sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+          src="https://embed.music.apple.com/ru/playlist/music-from-wecrashed/pl.0deb52c947f84084970a7b17a879db2b?l=en"></iframe>

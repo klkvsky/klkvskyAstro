@@ -3,45 +3,43 @@
 
 <!-- My Promo -->
 <div
-  class="p-4 w-full md:w-3/5 mx-auto rounded-3xl shadow-md bg-white dark:bg-white/5 mb-10"
+  class="p-4 w-full md:w-3/5 mx-auto rounded-3xl shadow-md bg-white dark:bg-white/5 mb-10 text-center"
 >
   <div class="md:flex md:flex-col md:gap-2 md:items-center md:justify-between">
-    <!-- <div
-      class="w-40 h-40 rounded-full grid place-items-center group cursor-pointer relative mx-auto mb-2"
-    >
-      <img
-        loading="lazy"
-        src="https://www.soyzniki.ru/assets/sticker.55aa54aa.webp"
-        class="w-full h-full absolute top-0 left-0 object-contain rounded-full group-hover:opacity-10 transition-all -mt-2"
-      />
-    </div> -->
     <div
-      class="rounded-full w-64 h-64 mx-auto mt-5 mb-10 grid place-items-center bg-white p-3"
+      id="person-in-circle"
+      class="bg-gradient-to-r from-grstart via-grcenter to-grend rounded-full w-64 aspect-square grid place-items-center z-10 relative mx-auto group mt-5 mb-10"
     >
       <div
-        class="rounded-full w-full h-full grid place-items-center bg-neutral-800"
+        class="absolute bg-gradient-to-r from-grstart via-grcenter to-grend rounded-full w-64 aspect-square grid place-items-center animate-spin-slow z-10 group-hover:animate-spin"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          class="w-48 h-auto fill-white"
-          ><circle cx="12" cy="4" r="2"></circle><path
-            d="M15 22V9h5V7H4v2h5v13h2v-7h2v7z"></path>
-        </svg>
+      </div>
+      <div
+        class="bg-white dark:bg-dark rounded-full w-60 h-60 group-hover:scale-90 transition-all duration-1000 z-20"
+      >
+        <div
+          class="bg-white/5 rounded-full w-full h-full grid place-items-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            class="fill-dark dark:fill-white w-36 h-36 group-hover:scale-125 transition-all duration-1000"
+            ><circle cx="12" cy="4" r="2"></circle><path
+              d="M15 22V9h5V7H4v2h5v13h2v-7h2v7z"></path>
+          </svg>
+        </div>
       </div>
     </div>
     <h5
       class="mb-2 text-3xl md:text-2xl font-bold text-gray-900 dark:text-white"
     >
-      Сделал @KLKVSKY
+      Сделал <a href="https://t.me/klkvsky" class="underline"> @KLKVSKY</a>
     </h5>
   </div>
   <p
     class="mb-4 text-base md:text-sm text-gray-500 sm:text-lg dark:text-gray-400"
   >
-    Сделал
-    <a href="https://t.me/klkvsky" class="hover:underline">@KLKVSKY</a> в 2022 от
-    нужды в надежде на лучшее.
+    В 2022 от нужды в надежде на лучшее.
   </p>
   <p
     class="mb-4 text-xs md:text-sm text-gray-500 sm:text-lg dark:text-gray-400"
@@ -53,10 +51,10 @@
   >
     <a
       href="https://t.me/klkvsky"
-      class="w-full sm:w-full focus:ring-4 focus:outline-none focus:ring-gray-300 dark:text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-white/5 bg-black/5"
+      class="w-full sm:w-full focus:ring-4 focus:outline-none focus:ring-gray-300 dark:text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-white/5 bg-black/5 bg-gradient-to-r from-grstart via-grcenter to-grend text-white"
     >
       <svg
-        class="mr-3 w-7 h-7 dark:fill-white fill-black"
+        class="mr-3 w-7 h-7 fill-white"
         aria-hidden="true"
         focusable="false"
         data-prefix="fab"

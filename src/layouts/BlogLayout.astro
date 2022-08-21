@@ -29,7 +29,7 @@ const {
   <body class="dark:bg-neutral-900 dark:text-white px-4 lg:px-64 xl:px-96">
     <Navbar />
     <main class="mt-5 mb-10">
-      <article class="leading-relaxed">
+      <article>
         <div class="flex flex-col gap-2">
           {
             pubDate && (
@@ -52,20 +52,25 @@ const {
           )
         }
         <div
-          class="my-3 prose lg:prose-xl dark:prose-invert prose-zinc prose-strong:underline prose-strong:decoration-[#7f67f6] prose-strong:font-semibold prose-strong:text-[#7f67f6] prose-strong:decoration-wavy dark:text-white"
+          class="my-3 prose lg:prose-lg dark:prose-invert prose-gray prose-strong:underline prose-strong:decoration-[#7f67f6] prose-strong:font-semibold prose-strong:text-[#7f67f6] prose-strong:decoration-wavy dark:text-white"
         >
           <slot />
         </div>
 
-        <iframe
-          loading="lazy"
-          allow="autoplay *; encrypted-media *;"
-          frameborder="0"
-          height="150"
-          class="no-scrollbar overflow-hidden"
-          style="width:100%;max-width:660px;overflow:hidden;background:transparent;"
-          sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-          src={iframe}></iframe>
+        {
+          iframe && (
+            <iframe
+              loading="lazy"
+              allow="autoplay *; encrypted-media *;"
+              frameborder="0"
+              height="150"
+              class="no-scrollbar overflow-hidden mt-2"
+              style="width:100%;max-width:660px;overflow:hidden;background:transparent;"
+              sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+              src={iframe}
+            />
+          )
+        }
       </article>
       <a
         href="/"
