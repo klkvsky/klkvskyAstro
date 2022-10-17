@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --host",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
@@ -15,5 +15,7 @@
     "@tailwindcss/typography": "^0.5.4",
     "astro": "^1.0.6"
   },
-  "dependencies": {}
+  "dependencies": {
+    "motion": "^10.14.2"
+  }
 }

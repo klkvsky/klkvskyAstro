@@ -3,18 +3,37 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 
 const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
-	(a, b) =>
-		new Date(b.frontmatter.pubDate).valueOf() -
-		new Date(a.frontmatter.pubDate).valueOf()
+  (a, b) =>
+    new Date(b.frontmatter.pubDate).valueOf() -
+    new Date(a.frontmatter.pubDate).valueOf()
 );
 ---
 
+<script>
+  import { animate, scroll } from "motion";
+
+  if (window.innerWidth < 736) {
+    document.querySelectorAll("#carousel li").forEach((item) => {
+      scroll(
+        animate(item, {
+          opacity: [0, 1, 1, 0],
+          scale: [0.9, 1, 1, 0.9],
+        }),
+        {
+          target: item,
+          offset: ["start end", "end end", "start start", "end start"],
+        }
+      );
+    });
+  }
+</script>
 <Layout title="Персональный блог Куликовского">
-	<main>
-		<ul
-			class="my-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-5 lg:gap-10"
-		>
-			{posts.map((post) => <Card post={post} />)}
-		</ul>
-	</main>
+  <main>
+    <ul
+      class="my-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 lg:gap-10"
+      id="carousel"
+    >
+      {posts.map((post) => <Card post={post} />)}
+    </ul>
+  </main>
 </Layout>

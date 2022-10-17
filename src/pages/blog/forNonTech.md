@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/BlogLayout.astro"
-title: "v1.0 | For non tech"
+title: "v1.0"
 pubDate: "Aug 19 2022"
 iframe: "https://embed.music.apple.com/us/album/shaiqa/1528325604?i=1528325801"
 type: "apple"
